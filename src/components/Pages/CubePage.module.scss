@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+
+.container{
+    display: grid;
+    grid-template-areas: 
+        'h1Module'
+        'template'
+    ;
+    
+}
+
+.h1Module{
+    grid-area: h1Module;
+    display: flex;
+    justify-content: center;
+}
+
+.h1{
+    font-size: 20px;
+    font-family: $inter-bold;
+    font-weight: 700;
+    
+}
+
+.template{
+    grid-area: template;
+}

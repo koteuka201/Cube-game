@@ -1,0 +1,22 @@
+@import '../../../../styles/variables.scss';
+
+.btn{
+    background-color: $btn-color;
+    color: white;
+    transition: background-color 0.3s;
+
+    font-size: 16px;
+    font-family: $inter-regular;
+    font-family: 400;
+
+    width: 165px;
+    height: 44px;
+
+    border: #9159BE solid 1px;
+    border-radius: 5px;
+    padding: 10px, 16px, 10px, 16px;
+    &:hover{
+        background-color: $btnHover-color;
+        border: #AB69E2 solid 1px;
+    }
+}

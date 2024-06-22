@@ -1,0 +1,25 @@
+
+$btn-color: #643F82;
+$btnHover-color: #8151A8;
+$btnSelected-color: #F6A200;
+$submitBtn-color: #37AC00;
+$submitBtnHover-color: #41CA00;
+$gray-color: #94A3B8;
+$lightGray-color: #CBD5E1;
+
+$inter-regular: 'Inter-400';
+$inter-bold: 'Inter-700';
+
+$tablet-width: 766px;
+$mobile-width: 375px;
+$desktop-width:  1194px;
+
+@font-face {
+    font-family: 'Inter-400';
+    src: url('../../public/fonts/inter.ttf');
+}
+
+@font-face {
+    font-family: 'Inter-700';
+    src: url('../../public/fonts/inter.ttf');
+}

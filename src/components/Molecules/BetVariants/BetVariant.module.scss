@@ -1,0 +1,46 @@
+@import '../../../styles/variables.scss';
+
+.container{
+    display: grid;
+    grid-template-areas: 
+        'p p'
+        'even odd'
+        'firstNums secondNums'
+        'cerNum cerNum'
+    ;
+    justify-content: space-between;
+}
+
+.pModule{
+    grid-area: p;
+}
+
+.p{
+    font-size: 14px;
+    font-family: $inter-regular;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+.evenModule{
+    grid-area: even;
+}
+
+.oddModule{
+    grid-area: odd;
+}
+
+.firstNumsModule{
+    grid-area: firstNums;
+    margin-top: 8px;
+}
+
+.secondNumsModule{
+    grid-area: secondNums;
+    margin-top: 8px;
+}
+
+.cerNumModule{
+    grid-area: cerNum;
+}
