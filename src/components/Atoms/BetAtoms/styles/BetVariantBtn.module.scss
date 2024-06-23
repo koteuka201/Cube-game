@@ -20,3 +20,12 @@
         border: #AB69E2 solid 1px;
     }
 }
+
+.selectedBtn{
+    background-color: $btnSelected-color;
+    border: #D77400 solid 1px;
+    &:hover{
+        background-color: $btnSelected-color;
+        border: #D77400 solid 1px;
+    }
+}
