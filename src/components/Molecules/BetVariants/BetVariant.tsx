@@ -1,9 +1,11 @@
-import styles from './BetVariant.module.scss'
+import styles from './styles/BetVariant.module.scss'
 import { BetVariantBtn } from '../../Atoms/BetAtoms/BetVariantBtn'
+import { BetVariantCerBtnFull } from './BetVariantCerBtnFull'
 
 export const BetVariant=()=>{
 
     const handleBetClick = (betType: string) => {
+        
     };
 
     return(
@@ -22,25 +24,25 @@ export const BetVariant=()=>{
                 <BetVariantBtn
                     selectedValue="selectedValue"
                     onClick={() => handleBetClick('Нечетное')}
-                    name='Четное'
+                    name='Нечетное'
                 />
             </div>
             <div className={styles.firstNumsModule}>
                 <BetVariantBtn
                     selectedValue="selectedValue"
                     onClick={() => handleBetClick('От 1 до 3')}
-                    name='Четное'
+                    name='От 1 до 3'
                 />
             </div>
             <div className={styles.secondNumsModule}>
                 <BetVariantBtn
                     selectedValue="selectedValue"
                     onClick={() => handleBetClick('От 4 до 6')}
-                    name='Четное'
+                    name='От 4 до 6'
                 />
             </div>
             <div className={styles.cerNumModule}>
-                
+                <BetVariantCerBtnFull/>
             </div>
         </div>
     )
