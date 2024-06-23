@@ -1,0 +1,23 @@
+@import '../../../../styles/variables.scss';
+
+.btn{
+    margin-top: 16px;
+
+    width: 338px;
+    height: 44px;
+    padding: 10px 16px 10px 16px;
+    border-radius: 5px;
+    border:#55F30A solid 1px ;
+
+    color: white;
+    font-size: 16px;
+    font-family: $inter-regular;
+    font-weight: 400;
+
+    background-color: $submitBtn-color;
+    transition: background-color 0.3s;
+
+    &:hover{
+        background-color: $submitBtnHover-color;
+    }
+}

@@ -15,7 +15,7 @@ export const BetVariantCerBtnFull=()=>{
     return(
         <BetVariantCerBtn 
             onclick={handleClick}
-            selectComponent={<BetVariantSelect valueVariant={value} onChange={handleChange}/>} 
+            selectComponent={<BetVariantSelect onChange={handleChange}/>} 
         />
     )
 }
