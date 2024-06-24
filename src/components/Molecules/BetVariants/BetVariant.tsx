@@ -1,13 +1,11 @@
 import styles from './styles/BetVariant.module.scss'
 import { BetVariantBtn } from '../../Atoms/BetAtoms/BetVariantBtn'
 import { BetVariantCerBtnFull } from './BetVariantCerBtnFull'
+import { useBet } from '../../../context/BetContext'
 
-interface BetVariantProps{
-    selectedBet: string;
-    setSelectedBet: (betType:string,e: React.MouseEvent<HTMLButtonElement>)=>void
-}
+export const BetVariant=()=>{
 
-export const BetVariant=(props: BetVariantProps)=>{
+    const {selectedBet, setSelectedBet}= useBet()
 
     return(
         <div className={styles.container}>
@@ -16,29 +14,29 @@ export const BetVariant=(props: BetVariantProps)=>{
             </div>
             <div className={styles.evenModule}>
                 <BetVariantBtn
-                    selectedStyle={props.selectedBet === 'Четное' ? true : false}
-                    onClick={(e) => props.setSelectedBet('Четное',e)}
+                    selectedStyle={selectedBet === 'Четное' ? true : false}
+                    onClick={(e) => setSelectedBet('Четное')}
                     name='Четное'
                 />
             </div>
             <div className={styles.oddModule}>
                 <BetVariantBtn
-                    selectedStyle={props.selectedBet === 'Нечетное' ? true : false}
-                    onClick={(e) => props.setSelectedBet('Нечетное',e)}
+                    selectedStyle={selectedBet === 'Нечетное' ? true : false}
+                    onClick={(e) => setSelectedBet('Нечетное')}
                     name='Нечетное'
                 />
             </div>
             <div className={styles.firstNumsModule}>
                 <BetVariantBtn
-                    selectedStyle={props.selectedBet === '1-3' ? true : false}
-                    onClick={(e) => props.setSelectedBet('1-3',e)}
+                    selectedStyle={selectedBet === '1-3' ? true : false}
+                    onClick={(e) => setSelectedBet('1-3')}
                     name='От 1 до 3'
                 />
             </div>
             <div className={styles.secondNumsModule}>
                 <BetVariantBtn
-                    selectedStyle={props.selectedBet === '4-6' ? true : false}
-                    onClick={(e) => props.setSelectedBet('4-6',e)}
+                    selectedStyle={selectedBet === '4-6' ? true : false}
+                    onClick={(e) => setSelectedBet('4-6')}
                     name='От 4 до 6'
                 />
             </div>

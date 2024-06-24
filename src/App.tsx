@@ -1,11 +1,14 @@
 import './index.scss'
 import styles from './App.module.scss'
 import { CubePage } from './components/Pages/CubePage'
+import { BetProvider } from './context/BetContext'
 
 export const App = ()=>{
   return(
-    <div className={styles.container}>
-      <CubePage/>
-    </div>
+    <BetProvider>
+      <div className={styles.container}>
+        <CubePage/>
+      </div>
+    </BetProvider>
   )
 }
