@@ -13,6 +13,8 @@
 
 .cubeModule{
     grid-area: cube;
+    display: flex;
+    justify-content: center;
 }
 
 .formModule{

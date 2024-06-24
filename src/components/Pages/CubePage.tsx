@@ -1,8 +1,9 @@
 import styles from './CubePage.module.scss'
 import { CubeTemplate } from '../Templates/CubeTemplate'
-import { useState } from 'react'
 
 export const CubePage = ()=>{
+
+    
 
     return(
         <div>

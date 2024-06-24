@@ -3,7 +3,6 @@ import { BetVariant } from '../../Molecules/BetVariants/BetVariant'
 import { SubmitBtn } from '../../Atoms/BetAtoms/SubmitBtn'
 import { BetSelect } from '../../Molecules/BetSelect/BetSelect'
 
-
 export const CubeForm=()=>{
     return(
         <form className={styles.container}>

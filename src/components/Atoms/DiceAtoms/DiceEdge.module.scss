@@ -1,0 +1,113 @@
+.diceEdge{
+    padding: 15px;
+    
+    width: 78px;
+    height: 78px;
+    border-radius: 4.67px;
+
+    background-color: white;
+
+    color: black;
+}
+
+.dot{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+
+.diceEdge_1{
+    display: grid;
+    grid-template-areas: 
+        'central'
+    ;
+}
+
+
+.diceEdge_2{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        'first'
+        'sixth'
+    ;
+}
+
+.diceEdge_3{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        'first'
+        'central'
+        'sixth'
+    ;
+}
+
+.diceEdge_4{
+    display: grid;
+    grid-template-areas:
+        'first second'
+        'fifth sixth'
+    ;
+}
+
+.diceEdge_5{
+    display: grid;
+    grid-template-areas:
+        'first second'
+        'central central'
+        'fifth sixth'
+    ;
+}
+
+.diceEdge_6{
+    display: grid;
+    grid-template-areas:
+        'first second'
+        'third fourth'
+        'fifth sixth'
+    ;
+}
+
+.firstDot{
+    height: 20px;
+    grid-area: first;
+    justify-self: start;
+}
+.secondDot{
+    height: 20px;
+    grid-area: second;
+    justify-self: end;
+}
+.thirdDot{
+    height: 20px;
+    grid-area: third;
+    justify-self: start;
+    align-self: center;
+}
+.fourthDot{
+    height: 20px;
+    grid-area: fourth;
+    justify-self: end;
+    align-self: center;
+}
+.fifthDot{
+    height: 20px;
+    grid-area: fifth;
+    justify-self: start;
+    align-self: end;
+}
+.centralDot{
+    height: 20px;
+    grid-area: central;
+    justify-self: center;
+    align-self: center;
+}
+.sixthDot{
+    height: 20px;
+    grid-area: sixth;
+    justify-self: end;
+    align-self: end;
+}
