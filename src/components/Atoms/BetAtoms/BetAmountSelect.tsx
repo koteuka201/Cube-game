@@ -1,16 +1,19 @@
 import { useState } from 'react'
 import styles from './styles/BetAmountSelect.module.scss'
+import { useBet } from '../../../context/BetContext';
 
 export const BetAmountSelect = ()=>{
 
-    const [isOpen, setIsOpen] = useState(false);
-
+    const [isOpen, setIsOpen] = useState(false)
+    const {betValue, setBetValue}=useBet()
     return(
         <select 
             className={`${styles.select} ${isOpen ? styles.open : ''}`}
             id='BetSelect'
             onMouseDown={()=>setIsOpen(!isOpen)}
             onBlur={()=>setIsOpen(false)}
+            onChange={(e)=>setBetValue(parseFloat(e.target.value))}
+            value={betValue}
         >
             <option value={1.00}>1.00</option>
             <option value={2.00}>2.00</option>

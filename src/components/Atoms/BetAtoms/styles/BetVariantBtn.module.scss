@@ -1,6 +1,8 @@
 @import '../../../../styles/variables.scss';
 
 .btn{
+    cursor: pointer;
+
     background-color: $btn-color;
     color: white;
     transition: background-color 0.3s;

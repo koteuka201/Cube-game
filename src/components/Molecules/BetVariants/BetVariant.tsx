@@ -7,6 +7,8 @@ export const BetVariant=()=>{
 
     const {selectedBet, setSelectedBet}= useBet()
 
+    const isSelected = (bet: number[]) => bet.every(num => selectedBet.includes(num))
+
     return(
         <div className={styles.container}>
             <div className={styles.pModule}>
@@ -14,34 +16,36 @@ export const BetVariant=()=>{
             </div>
             <div className={styles.evenModule}>
                 <BetVariantBtn
-                    selectedStyle={selectedBet === 'Четное' ? true : false}
-                    onClick={(e) => setSelectedBet('Четное')}
+                    selectedStyle={isSelected([2, 4, 6])}
+                    onClick={(e) => setSelectedBet([2, 4, 6])}
                     name='Четное'
                 />
             </div>
             <div className={styles.oddModule}>
                 <BetVariantBtn
-                    selectedStyle={selectedBet === 'Нечетное' ? true : false}
-                    onClick={(e) => setSelectedBet('Нечетное')}
+                    selectedStyle={isSelected([1, 3, 5])}
+                    onClick={(e) => setSelectedBet([1, 3, 5])}
                     name='Нечетное'
                 />
             </div>
             <div className={styles.firstNumsModule}>
                 <BetVariantBtn
-                    selectedStyle={selectedBet === '1-3' ? true : false}
-                    onClick={(e) => setSelectedBet('1-3')}
+                    selectedStyle={isSelected([1, 2, 3])}
+                    onClick={(e) => setSelectedBet([1, 2, 3])}
                     name='От 1 до 3'
                 />
             </div>
             <div className={styles.secondNumsModule}>
                 <BetVariantBtn
-                    selectedStyle={selectedBet === '4-6' ? true : false}
-                    onClick={(e) => setSelectedBet('4-6')}
+                    selectedStyle={isSelected([4, 5, 6])}
+                    onClick={(e) => setSelectedBet([4, 5, 6])}
                     name='От 4 до 6'
                 />
             </div>
             <div className={styles.cerNumModule}>
-                <BetVariantCerBtnFull/>
+                <BetVariantCerBtnFull
+                    selectedStyle={selectedBet.length===1 ? true : false}
+                />
             </div>
         </div>
     )

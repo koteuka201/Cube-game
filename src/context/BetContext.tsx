@@ -1,8 +1,10 @@
 import React, { ReactNode, createContext, useContext, useState } from 'react';
 
 interface BetContextProps {
-    selectedBet: string;
-    setSelectedBet: (betType: string) => void;
+    selectedBet: number[];
+    setSelectedBet: (betType: number[]) => void;
+    betValue: number;
+    setBetValue: (betValue: number)=>void;
 }
 
 const BetContext = createContext<BetContextProps | undefined>(undefined)
@@ -17,11 +19,14 @@ export const useBet = () => {
 }
 
 export const BetProvider =(props:{children:ReactNode})=>{
-    const [selectedBet, setSelectedBet]=useState<string>('')
+    const [selectedBet, setSelectedBet]=useState<number[]>([])
+    const [betValue,setBetValue]=useState<number>(1.00)
 
     const value={
         selectedBet,
-        setSelectedBet
+        setSelectedBet,
+        betValue,
+        setBetValue
     }
 
     return <BetContext.Provider value={value}>{props.children}</BetContext.Provider>

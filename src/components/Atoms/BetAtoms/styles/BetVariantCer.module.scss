@@ -35,3 +35,12 @@
     padding: 4px 10px 4px 10px;
     border-radius: 4px;
 }
+
+.selectedBtn{
+    background-color: $btnSelected-color;
+    border: #D77400 solid 1px;
+    &:hover{
+        background-color: $btnSelected-color;
+        border: #D77400 solid 1px;
+    }
+}
