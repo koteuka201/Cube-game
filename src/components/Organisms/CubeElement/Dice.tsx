@@ -19,13 +19,17 @@ export const Dice = ()=>{
     ]
 
     const {finalNumber}=useBet()
-    const {trigger,setTrigger}=useBet()
+    const {trigger}=useBet()
     const [currentEdge, setCurrentEdge]=useState<React.ReactNode>(diceEdges[0])
+    const {setIsRollFinished}=useBet()
 
     useEffect(()=>{
+        setIsRollFinished(false)
+
         let iteration=0
         let delay=5
         let timeoutId: ReturnType<typeof setTimeout>
+
         const roll=()=>{
             if (iteration<30){
                 const index=Math.floor(Math.random()* diceEdges.length)
@@ -36,9 +40,10 @@ export const Dice = ()=>{
             }
             else{
                 setCurrentEdge(diceEdges[finalNumber-1])
+                setIsRollFinished(true)
             }
         }
-
+        
         roll()
 
         return ()=> clearTimeout(timeoutId)

@@ -9,8 +9,9 @@
     
 }
 
-.h1Module{
+.headingModule{
     grid-area: h1Module;
+    margin-bottom: 60px;
     display: flex;
     justify-content: center;
 }
@@ -19,7 +20,16 @@
     font-size: 20px;
     font-family: $inter-bold;
     font-weight: 700;
-    margin-bottom: 60px;
+    margin-bottom: 7px;
+}
+
+.h2{
+    height: 24px;
+    font-size: 16px;
+    font-family: $inter-regular;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
 }
 
 .template{
