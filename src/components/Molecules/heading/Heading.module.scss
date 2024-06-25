@@ -1,0 +1,19 @@
+@import '../../../styles/variables.scss';
+
+
+
+.h1{
+    font-size: 20px;
+    font-family: $inter-bold;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.h2{
+    height: 24px;
+    font-size: 16px;
+    font-family: $inter-regular;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+}
