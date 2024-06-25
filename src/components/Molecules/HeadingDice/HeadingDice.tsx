@@ -2,9 +2,9 @@ import { useBet } from "../../../context/BetContext";
 import { CheckWin } from "../../../helpers/CheckWin";
 import { CalculateProfit } from "../../../helpers/CalculateProfit";
 import { useEffect, useState } from "react";
-import styles from './Heading.module.scss'
+import styles from './HeadingDice.module.scss'
 
-export const Heading = ()=>{
+export const HeadingDice = ()=>{
 
     const {selectedBet,finalNumber,isRollFinished, betValue}=useBet()
     const [betVariant,setBetVariant]=useState<number[]>([0])

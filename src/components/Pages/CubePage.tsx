@@ -1,13 +1,12 @@
 import styles from './CubePage.module.scss'
 import { CubeTemplate } from '../Templates/CubeTemplate'
-import { Heading } from '../Molecules/Heading/Heading'
-
+import { HeadingDice } from '../Molecules/HeadingDice/HeadingDice'
 
 export const CubePage = ()=>{
     return(
         <div>
             <div className={styles.headingModule}>
-                <Heading/>
+                <HeadingDice/>
             </div>
            <div className={styles.template}>
                 <CubeTemplate />
