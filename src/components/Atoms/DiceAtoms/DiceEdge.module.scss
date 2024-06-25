@@ -1,3 +1,18 @@
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 155px;
+    height: 155px;
+
+    border: #42165D solid 2px;
+    border-radius: 5px;
+
+    margin-bottom: 0px;
+}
+
 .diceEdge{
     padding: 15px;
     
