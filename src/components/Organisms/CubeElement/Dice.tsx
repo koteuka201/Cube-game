@@ -5,7 +5,10 @@ import { DiceEdge_4 } from "../../Atoms/DiceAtoms/DiceEdges/DiceEdge_4";
 import { DiceEdge_5 } from "../../Atoms/DiceAtoms/DiceEdges/DiceEdge_5";
 import { DiceEdge_6 } from "../../Atoms/DiceAtoms/DiceEdges/DiceEdge_6";
 import { useBet } from "../../../context/BetContext";
+import { useBetStore } from "../../../store/store";
 import { useEffect, useState } from "react";
+import { CalculateProfit } from "../../../helpers/CalculateProfit";
+import { CheckWin } from "../../../helpers/CheckWin";
 
 export const Dice = ()=>{
 
@@ -18,10 +21,10 @@ export const Dice = ()=>{
         <DiceEdge_6 key={6} />
     ]
 
-    const {finalNumber}=useBet()
-    const {trigger}=useBet()
+
+    const {increaseBalance}=useBetStore()
     const [currentEdge, setCurrentEdge]=useState<React.ReactNode>(diceEdges[0])
-    const {setIsRollFinished}=useBet()
+    const {trigger, finalNumber, betValue,selectedBet, setIsRollFinished}=useBet()
 
     useEffect(()=>{
         setIsRollFinished(false)
@@ -41,6 +44,10 @@ export const Dice = ()=>{
             else{
                 setCurrentEdge(diceEdges[finalNumber-1])
                 setIsRollFinished(true)
+                if(CheckWin(selectedBet,finalNumber)){
+                    increaseBalance(CalculateProfit(betValue,selectedBet,finalNumber))
+                }
+                
             }
         }
         
@@ -49,6 +56,7 @@ export const Dice = ()=>{
         return ()=> clearTimeout(timeoutId)
 
     },[trigger])
+
 
     return(
         <div>

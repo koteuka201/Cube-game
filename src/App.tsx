@@ -2,13 +2,16 @@ import './index.scss'
 import styles from './App.module.scss'
 import { CubePage } from './components/Pages/CubePage'
 import { BetProvider } from './context/BetContext'
+import { Header } from './components/Molecules/Header/Header'
 
 export const App = ()=>{
   return(
     <BetProvider>
-      <div className={styles.container}>
+    
+      <Header/>
+      <section className={styles.container}>
         <CubePage/>
-      </div>
+      </section>
     </BetProvider>
   )
 }

@@ -1,16 +1,20 @@
 import styles from './styles/SubmitBtn.module.scss'
 import { useBet } from '../../../context/BetContext'
+import { useBetStore } from '../../../store/store'
 
 export const SubmitBtn = ()=>{
 
-    const {rollDice}=useBet()
-    const {trigger, setTrigger}=useBet()
-    const {selectedBet,setSelectedBet}=useBet()
-    
+    const {decreaseBalance, balance}=useBetStore()
+    const {selectedBet,trigger, betValue ,setTrigger, rollDice}=useBet()
+
     const handleClick=(e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
         e.preventDefault()
-        rollDice()
-        setTrigger(!trigger)
+        if(balance-betValue>=0){
+            rollDice()
+            setTrigger(!trigger)
+            decreaseBalance(betValue)
+        }
+        
     }
 
     return(

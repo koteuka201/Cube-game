@@ -1,6 +1,6 @@
 import styles from './CubePage.module.scss'
 import { CubeTemplate } from '../Templates/CubeTemplate'
-import { Heading } from '../Molecules/heading/Heading'
+import { Heading } from '../Molecules/Heading/Heading'
 
 export const CubePage = ()=>{
 

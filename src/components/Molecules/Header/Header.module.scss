@@ -1,0 +1,26 @@
+@import '../../../styles/variables.scss';
+
+.container{
+    padding: 15px 24px 0px 24px;
+    display: grid;
+    grid-template-areas: 
+        'name balance'
+    ;
+    font-size: 16px;
+    color: white;
+}
+
+.name{
+    grid-area: name;
+    justify-self: start;
+    font-family: $inter-bold;
+    font-weight: 700;
+    
+}
+
+.balance{
+    grid-area: balance;
+    justify-self: end;
+    font-family: $inter-regular;
+    font-weight: 400;
+}
