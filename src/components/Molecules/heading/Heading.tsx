@@ -1,18 +1,17 @@
 import { useBet } from "../../../context/BetContext";
 import { CheckWin } from "../../../helpers/CheckWin";
+import { CalculateProfit } from "../../../helpers/CalculateProfit";
 import { useEffect, useState } from "react";
 import styles from './Heading.module.scss'
 
 export const Heading = ()=>{
 
-    const {isRollFinished}=useBet()
-    const {selectedBet,finalNumber}=useBet()
-
+    const {selectedBet,finalNumber,isRollFinished, betValue}=useBet()
     const [betVariant,setBetVariant]=useState<number[]>([0])
-    
+    const [betValueFix,setBetValueFix]=useState(0)
 
     useEffect(()=>{
-        
+        setBetValueFix(betValue)        
         setBetVariant(selectedBet)
     },[finalNumber])
 
@@ -23,7 +22,7 @@ export const Heading = ()=>{
                         <div>
                             <div className={styles.h1}>Результат броска кубика: {finalNumber}</div>
                             {CheckWin(betVariant,finalNumber) ? (
-                                    <div className={styles.h2}>Вы выиграли</div>
+                                    <div className={styles.h2}>Вы выиграли {CalculateProfit(betValueFix,betVariant,finalNumber)} TND!</div>
                                 ) : (
                                     <div className={styles.h2}>Повезет в следующий раз!</div>
                                 )
