@@ -2,6 +2,7 @@ import styles from './CubePage.module.scss'
 import { CubeTemplate } from '../Templates/CubeTemplate'
 import { Heading } from '../Molecules/Heading/Heading'
 
+
 export const CubePage = ()=>{
     return(
         <div>
