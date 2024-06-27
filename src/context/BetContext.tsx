@@ -15,6 +15,9 @@ interface BetContextProps {
 
     isRollFinished: boolean;
     setIsRollFinished: (isRollFinished: boolean)=>void
+
+    isRolling: boolean;
+    setIsRolling: (isRolling: boolean)=>void
 }
 
 const BetContext = createContext<BetContextProps | undefined>(undefined)
@@ -35,7 +38,7 @@ export const BetProvider =(props:{children:ReactNode})=>{
     const [finalNumber, setFinalNumber] = useState<number>(0)
     const [trigger,setTrigger]=useState<boolean>(false)
     const [isRollFinished, setIsRollFinished]=useState(false)
-
+    const [isRolling, setIsRolling]=useState(false)
 
     const rollDice = () => {
         const newNumber = Math.floor(Math.random() * 6) + 1
@@ -56,7 +59,10 @@ export const BetProvider =(props:{children:ReactNode})=>{
         setTrigger,
 
         isRollFinished,
-        setIsRollFinished
+        setIsRollFinished,
+
+        isRolling,
+        setIsRolling
     }
 
     return <BetContext.Provider value={value}>{props.children}</BetContext.Provider>

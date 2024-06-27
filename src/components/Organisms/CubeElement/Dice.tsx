@@ -24,10 +24,11 @@ export const Dice = ()=>{
 
     const {increaseBalance}=useBetStore()
     const [currentEdge, setCurrentEdge]=useState<React.ReactNode>(diceEdges[0])
-    const {trigger, finalNumber, betValue,selectedBet, setIsRollFinished}=useBet()
+    const {trigger, finalNumber, betValue,selectedBet, setIsRollFinished, setIsRolling}=useBet()
 
     useEffect(()=>{
         setIsRollFinished(false)
+        setIsRolling(true)
 
         let iteration=0
         let delay=5
@@ -44,6 +45,8 @@ export const Dice = ()=>{
             else{
                 setCurrentEdge(diceEdges[finalNumber-1])
                 setIsRollFinished(true)
+                setIsRolling(false)
+
                 if(CheckWin(selectedBet,finalNumber)){
                     increaseBalance(CalculateProfit(betValue,selectedBet,finalNumber))
                 }

@@ -5,7 +5,7 @@ import { useBetStore } from '../../../store/store'
 export const SubmitBtn = ()=>{
 
     const {decreaseBalance, balance}=useBetStore()
-    const {selectedBet,trigger, betValue ,setTrigger, rollDice}=useBet()
+    const {selectedBet,trigger, betValue ,setTrigger, rollDice, isRolling}=useBet()
 
     const handleClick=(e: React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
         e.preventDefault()
@@ -21,7 +21,7 @@ export const SubmitBtn = ()=>{
         <button 
             className={styles.btn} 
             onClick={handleClick}
-            disabled={selectedBet.length!==0 ? false : true}
+            disabled={selectedBet.length===0 ? true : isRolling ? true : false}
         >
             Сделать ставку
         </button>
